@@ -23,7 +23,7 @@
       <div class="row">
         <div class="input-field col s12">
           <textarea id="extra" ng-model="extra" class="materialize-textarea"></textarea>
-          <label for="extra">Descripcion del Juego</label>
+          <label for="extra">Descripcion del Disco</label>
         </div>
       </div>
       <div class="center">
@@ -42,9 +42,9 @@
 			<th>Descripcion del Disco</th>
 			<th>Email</th>
 		</tr>
-		<tr ng-repeat="obj in comiclist">
+		<tr ng-repeat="obj in musiclist">
 			<td>{{$index}}</td>
-			<td>{{obj.nombreComic}}</td>
+			<td>{{obj.nombreDisco}}</td>
 			<td>{{obj.album}}</td>
 			<td>{{obj.genero}}</td>
 			<td>{{obj.extra}}</td>

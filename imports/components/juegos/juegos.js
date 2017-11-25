@@ -12,12 +12,11 @@ class Controlador {
 				return juegoDB.find({owner : Meteor.userId()});
 			}
 		});
+
 		$scope.insertInfo = function(index){
 			if (Meteor.userId() === null){
 				Materialize.toast('Debes iniciar sesión',4000);
 				return;
-			}if ($scope.nameGame.$invalid || $scope.genero.$invalid || $scope.extra.$invalid){
-				Materialize.toast('Faltan Campos por Llenar.', 4000);
 			}else{
 				juegoDB.insert({
 				id : index,
@@ -27,8 +26,8 @@ class Controlador {
 				owner : Meteor.userId(),
 				user : Meteor.user().emails[0].address
 			});
-				console.log($scope.nameGame);
 				Materialize.toast('objeto agregado.', 4000);
+				return juegoDB.find({owner : Meteor.userId()});
 			}
 			
 		}
