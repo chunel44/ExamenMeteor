@@ -1,0 +1,48 @@
+<div class="card-panel">
+	<header>
+		<h3>Insertar Información del Comic</h3>
+	</header>
+	<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="Name" type="text" class="validate" ng-model="nameComic">
+          <label for="Name">Nombre del comic</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="Genero" type="text" class="validate" ng-model="genero">
+          <label for="genero">Genero</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="extra" ng-model="extra" class="materialize-textarea"></textarea>
+          <label for="extra">Descripcion del Juego</label>
+        </div>
+      </div>
+      <div class="center">
+				<button class="btn" ng-click="insertInfo($index)">Insertar</button>
+				<button class="btn" ng-click="editarInfo($index)">Editar</button>
+			</div>
+      </form>
+  </div>
+	<h4>lista de objetos:</h4>
+	<table class="bordered highlighted">
+		<tr>
+			<th>#</th>
+			<th>Nombre del Comic</th>
+			<th>Genero</th>
+			<th>Descripcion del Comic</th>
+			<th>Email</th>
+		</tr>
+		<tr ng-repeat="obj in comiclist">
+			<td>{{$index}}</td>
+			<td>{{obj.nombreComic}}</td>
+			<td>{{obj.genero}}</td>
+			<td>{{obj.extra}}</td>
+			<td>{{obj.user}}</td>
+		</tr>
+	</table>
+</div>
